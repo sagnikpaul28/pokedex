@@ -1,20 +1,15 @@
 import React from "react";
 import { render } from "react-dom";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Provider } from "react-redux";
 
-import { Home } from './components/Home';
+import store from "./store";
 
-class App extends React.Component {
-    render() {
-        return (
-            <BrowserRouter>
-                <Switch>
-                    <Route exact path="/" component={ Home }/>
-                    {/*<Route component="Error" />*/}
-                </Switch>
-            </BrowserRouter>
-        );
-    }
-}
+import Home from './containers/Home';
 
-render(<App/>, document.getElementsByClassName('app')[0]);
+render(
+    <Provider store={store}>
+        <Home />
+    </Provider>,
+    window.document.getElementsByClassName('app')[0]
+);

@@ -84,9 +84,13 @@ body {
     z-index: -1;
 }
 .pokemon-single .pokemon-modal-container {
-    width: 100%;
+    width: 90%;
+    background: white;
+    max-width: 900px;
+    padding: 5px;
+    border: 1px solid #aaa;
 }
-.pokemon-single .pokemon-modal-container > div {
+.pokemon-single .pokemon-modal-container .previous-pokemon, .pokemon-single .pokemon-modal-container .next-pokemon {
     height: 130px;
 }
 .pokemon-single .pokemon-modal-container h4 {
@@ -106,4 +110,123 @@ body {
 }
 .pokemon-single .next-pokemon {
     border-left-width: 4px;
+}
+.pokemon-single .pokemon-name {
+    max-width: 580px;
+    text-align: center;
+    width: 90%;
+    background: white;
+    margin: -60px auto 0;
+    padding: 15px 0 19px;
+    display: block;
+    position: relative;
+    border-radius: 15px 15px 0 0;
+    font-size: 2em;
+}
+.pokemon-single .pokemon-name::after {
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    right: -28px;
+    top: 8px;
+    border: solid;
+    border-width: 52px 0 0 30px;
+    border-color: transparent white transparent white;
+}
+.pokemon-single .pokemon-name::before {
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    left: -28px;
+    top: 8px;
+    border: solid;
+    border-width: 52px 30px 0 0;
+    border-color: transparent white transparent white;
+}
+.pokemon-single .pokemon-details-container {
+    display: flex;
+}
+.pokemon-single .pokemon-details-container img {
+    flex-basis: 260px;
+    height: 260px;
+    object-fit: contain;
+}
+.pokemon-single .pokemon-details-container .pokemon-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.pokemon-single .pokemon-details-container .pokemon-details p {
+    font-size: 1.25em;
+    margin: .5em;
+}
+.pokemon-single .pokemon-details-container .pokemon-details .pokemon-types-container {
+    margin: .7em .5em .5em;
+    font-size: 1.5em;
+    font-weight: 500;
+}
+.pokemon-single .pokemon-details-container .pokemon-details .pokemon-types-container > div {
+    display: inline-block;
+    padding: 3px 10px 7px;
+    font-size: 1rem;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    margin: 10px 1px;
+    color: white;
+    line-height: 1.5;
+    text-transform: capitalize;
+}
+.pokemon-single .pokemon-details-container .pokemon-details .pokemon-types-container > div.fire {
+    background: red;
+}
+.pokemon-single .pokemon-details-container .pokemon-details .pokemon-types-container > div.grass {
+    background: green;
+}
+.pokemon-single .pokemon-details-container .pokemon-details .pokemon-types-container > div.poison {
+    background: blueviolet;
+}
+.pokemon-single .pokemon-details-container .pokemon-details .pokemon-types-container > div.flying {
+    background: deepskyblue;
+}
+.pokemon-single .pokemon-details-container .pokemon-details .pokemon-types-container > div.water {
+    background: darkcyan;
+}
+.pokemon-single .pokemon-details-container .pokemon-details .pokemon-types-container > div.bug {
+    background: green;
+}
+.pokemon-single .pokemon-details-container .pokemon-details .pokemon-types-container > div.normal {
+    background: darkgray;
+}
+.pokemon-single .pokemon-details-container .pokemon-details .pokemon-types-container > div.electric {
+    background: goldenrod;
+}
+.pokemon-single .pokemon-details-container .pokemon-details .pokemon-types-container > div.ground {
+    background: darkgoldenrod;
+}
+.pokemon-single .pokemon-details-container .pokemon-details .pokemon-types-container > div.fairy {
+    background: deeppink;
+}
+.pokemon-single .pokemon-details-container .pokemon-details .pokemon-types-container > div.fighting {
+    background: orangered;
+}
+.pokemon-single .pokemon-details-container .pokemon-details .pokemon-types-container > div.psychic {
+    background: mediumvioletred;
+}
+.pokemon-single .pokemon-details-container .pokemon-details .pokemon-types-container > div.rock {
+    background: chocolate;
+}
+.pokemon-single .pokemon-details-container .pokemon-details .pokemon-types-container > div.steel {
+    background: darkslategray;
+}
+.pokemon-single .pokemon-details-container .pokemon-details .pokemon-types-container > div.ice {
+    background: dodgerblue;
+}
+.pokemon-single .pokemon-details-container .pokemon-details .pokemon-types-container > div.ghost {
+    background: darkslateblue;
+}
+.pokemon-single .pokemon-details-container .pokemon-details .pokemon-types-container > div.dragon {
+    background: darkred;
 }
