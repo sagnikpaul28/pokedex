@@ -4,25 +4,35 @@ import { connect } from "react-redux";
 
 import PreviousPokemon from "../components/PreviousPokemon";
 import NextPokemon from "../components/NextPokemon";
-import {modalHide} from "../actions/modalActions";
+import {modalHide, showNextPokemon, showPreviousPokemon} from "../actions/modalActions";
+import {pokemonData} from "../pokemon.json";
 
 export class PokemonSingleModal extends React.Component {
     constructor() {
         super();
 
         this.closeModal = this.closeModal.bind(this);
+        this.onKeyPress = this.onKeyPress.bind(this);
     }
 
-    closeModal(e) {
-        if ( !e || (e && e.keyCode === 27)) {
-            if (this.props.modal.isVisible === 1) {
-                this.props.modalHide();
-            }
+    closeModal() {
+        if (this.props.modal.isVisible === 1) {
+            this.props.modalHide();
+        }
+    }
+
+    onKeyPress(e) {
+        if (e.keyCode === 27) {
+            this.closeModal();
+        }else if (e.keyCode === 39 && this.props.modal.pokemon.rank < pokemonData.length) {
+            this.props.nextPokemon(this.props.modal.pokemon);
+        }else if (e.keyCode === 37 && this.props.modal.pokemon.rank > 1) {
+            this.props.previousPokemon(this.props.modal.pokemon);
         }
     }
 
     componentWillMount() {
-        document.addEventListener("keydown", this.closeModal, false);
+        document.addEventListener("keydown", this.onKeyPress, false);
     }
 
     render() {
@@ -80,6 +90,16 @@ const mapDispatchToProps = (dispatch) => {
         modalHide: () => {
             dispatch(
                 modalHide()
+            )
+        },
+        nextPokemon: (item) => {
+            dispatch(
+                showNextPokemon(item)
+            )
+        },
+        previousPokemon: (item) => {
+            dispatch(
+                showPreviousPokemon(item)
             )
         }
     }

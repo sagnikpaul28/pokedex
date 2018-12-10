@@ -35,7 +35,7 @@ export function showPreviousPokemon(item) {
     let rank = item.rank;
     rank = Number(rank);
 
-    let previousPokemon =  rank !== 1 ? pokemonData[Object.keys(pokemonData)[rank - 2]] : null;
+    let previousPokemon =  rank !== 1 ? pokemonData[Object.keys(pokemonData)[rank - 3]] : null;
 
     return {
         type: "PREVIOUS_POKEMON",
@@ -47,7 +47,7 @@ export function showNextPokemon(item) {
     let rank = item.rank;
     rank = Number(rank);
 
-    let nextPokemon =  rank !== pokemonData.length ? pokemonData[Object.keys(pokemonData)[rank]] : null;
+    let nextPokemon =  rank !== pokemonData.length ? pokemonData[Object.keys(pokemonData)[rank + 1]] : null;
 
     return {
         type: "NEXT_POKEMON",

@@ -190,10 +190,10 @@ body {
     background: blueviolet;
 }
 .pokemon-single .pokemon-details-container .pokemon-details .pokemon-types-container > div.flying {
-    background: deepskyblue;
+    background: darkcyan;
 }
 .pokemon-single .pokemon-details-container .pokemon-details .pokemon-types-container > div.water {
-    background: darkcyan;
+    background: deepskyblue;
 }
 .pokemon-single .pokemon-details-container .pokemon-details .pokemon-types-container > div.bug {
     background: green;
