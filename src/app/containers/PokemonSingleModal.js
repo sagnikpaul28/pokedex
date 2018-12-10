@@ -55,8 +55,8 @@ export class PokemonSingleModal extends React.Component {
                 <div className="pokemon-single">
                     <div className="pokemon-modal-layer"/>
                     <div className="pokemon-modal-container">
-                        <PreviousPokemon item={this.props.modal.previous} />
-                        <NextPokemon item={this.props.modal.next}/>
+                        <PreviousPokemon item={this.props.modal.previous} currentItem={this.props.modal.pokemon}/>
+                        <NextPokemon item={this.props.modal.next} currentItem={this.props.modal.pokemon}/>
                         <h2 className="pokemon-name">{this.props.modal.pokemon.name} <span>#{this.props.modal.pokemon.rank}</span>
                         </h2>
                         <div className="pokemon-details-container">

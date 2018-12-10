@@ -12,7 +12,7 @@ export class NextPokemon extends React.Component {
             );
         }else {
             return (
-                <div className="next-pokemon" onClick={() => this.props.showNextPokemon(this.props.item)}>
+                <div className="next-pokemon" onClick={() => this.props.showNextPokemon(this.props.currentItem)}>
                     <h4><span>#{this.props.item.rank}</span> {this.props.item.name}</h4>
                 </div>
             )

@@ -25,6 +25,8 @@ const modalReducer = (state = {
             break;
 
         case "PREVIOUS_POKEMON":
+            console.log("state ", state);
+            console.log("payload ", action.payload);
             state = {
                 ...state,
                 next: state.pokemon,
