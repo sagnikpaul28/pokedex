@@ -37,9 +37,7 @@ export class PokemonSingleModal extends React.Component {
 
     render() {
         if (this.props.modal.isVisible === 0) {
-            return (
-                <div/>
-            )
+            return (null);
         }else {
             let types = this.props.modal.pokemon.type.map(item => {
                 return (
