@@ -24,6 +24,24 @@ const modalReducer = (state = {
             };
             break;
 
+        case "PREVIOUS_POKEMON":
+            state = {
+                ...state,
+                next: state.pokemon,
+                pokemon: state.previous,
+                previous: action.payload
+            };
+            break;
+
+        case "NEXT_POKEMON":
+            state = {
+                ...state,
+                previous: state.pokemon,
+                pokemon: state.next,
+                next: action.payload
+            };
+            console.log(state);
+            break;
     }
     return state;
 };

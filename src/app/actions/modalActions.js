@@ -30,3 +30,27 @@ export function modalHide() {
         payload: null
     }
 }
+
+export function showPreviousPokemon(item) {
+    let rank = item.rank;
+    rank = Number(rank);
+
+    let previousPokemon =  rank !== 1 ? pokemonData[Object.keys(pokemonData)[rank - 2]] : null;
+
+    return {
+        type: "PREVIOUS_POKEMON",
+        payload: previousPokemon
+    }
+}
+
+export function showNextPokemon(item) {
+    let rank = item.rank;
+    rank = Number(rank);
+
+    let nextPokemon =  rank !== pokemonData.length ? pokemonData[Object.keys(pokemonData)[rank]] : null;
+
+    return {
+        type: "NEXT_POKEMON",
+        payload: nextPokemon
+    }
+}

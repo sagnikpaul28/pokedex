@@ -2,11 +2,10 @@ import React from "react";
 
 import { connect } from "react-redux";
 
-import { PreviousPokemon} from "../components/PreviousPokemon";
-import { NextPokemon } from "../components/NextPokemon";
+import PreviousPokemon from "../components/PreviousPokemon";
+import NextPokemon from "../components/NextPokemon";
 
 export class PokemonSingleModal extends React.Component {
-
     render() {
         if (this.props.modal.isVisible === 0) {
             return (
@@ -27,7 +26,7 @@ export class PokemonSingleModal extends React.Component {
                 <div className="pokemon-single">
                     <div className="pokemon-modal-layer"/>
                     <div className="pokemon-modal-container">
-                        <PreviousPokemon item={this.props.modal.previous}/>
+                        <PreviousPokemon item={this.props.modal.previous} />
                         <NextPokemon item={this.props.modal.next}/>
                         <h2 className="pokemon-name">{this.props.modal.pokemon.name} <span>#{this.props.modal.pokemon.rank}</span>
                         </h2>
