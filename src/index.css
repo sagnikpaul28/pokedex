@@ -89,6 +89,7 @@ body {
     max-width: 900px;
     padding: 5px;
     border: 1px solid #aaa;
+    position: relative;
 }
 .pokemon-single .pokemon-modal-container .previous-pokemon, .pokemon-single .pokemon-modal-container .next-pokemon {
     height: 130px;
@@ -229,4 +230,14 @@ body {
 }
 .pokemon-single .pokemon-details-container .pokemon-details .pokemon-types-container > div.dragon {
     background: darkred;
+}
+.pokemon-single .close {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    padding: 10px 25px;
+    background: transparent;
+    border-radius: 7px;
+    border: 1px solid #aaa;
+    font-size: .85em;
 }

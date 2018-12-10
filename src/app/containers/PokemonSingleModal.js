@@ -4,8 +4,27 @@ import { connect } from "react-redux";
 
 import PreviousPokemon from "../components/PreviousPokemon";
 import NextPokemon from "../components/NextPokemon";
+import {modalHide} from "../actions/modalActions";
 
 export class PokemonSingleModal extends React.Component {
+    constructor() {
+        super();
+
+        this.closeModal = this.closeModal.bind(this);
+    }
+
+    closeModal(e) {
+        if ( !e || (e && e.keyCode === 27)) {
+            if (this.props.modal.isVisible === 1) {
+                this.props.modalHide();
+            }
+        }
+    }
+
+    componentWillMount() {
+        document.addEventListener("keydown", this.closeModal, false);
+    }
+
     render() {
         if (this.props.modal.isVisible === 0) {
             return (
@@ -41,6 +60,7 @@ export class PokemonSingleModal extends React.Component {
                                 </div>
                             </div>
                         </div>
+                        <button onClick={() => this.closeModal()} className="close">Close</button>
                     </div>
                 </div>
             )
@@ -57,8 +77,13 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-
+        modalHide: () => {
+            dispatch(
+                modalHide()
+            )
+        }
     }
+
 };
 
 export default connect (mapStateToProps, mapDispatchToProps)(PokemonSingleModal);
